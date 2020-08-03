@@ -1,4 +1,3 @@
-install.packages('dash')
 library(forcats)
 library(dplyr)
 library(tidyr)
@@ -68,12 +67,9 @@ movies_viewed <- movies_viewed %>%
 #movies_viewed_na <- movies_viewed[is.na(movies_viewed$Genre1),]
 #sapply(movies_viewed, function(x) sum(is.na(x)))
 
-
-
 netflix_movies <- movies_viewed %>%
   count(Date,title) %>%
   arrange(desc(n))
-
 
 # PLOTTING MOVIES PER DAY
 netflix_movies_plot <- ggplot(aes(x = Date, y = n, color = n), data = netflix_movies) +
@@ -83,7 +79,6 @@ netflix_movies_plot <- ggplot(aes(x = Date, y = n, color = n), data = netflix_mo
   scale_x_date(breaks = "5 months",date_labels = "%b %y") +
   labs(x = "Year", y = "No of Movies") 
 netflix_movies_plot
-
 
 netflix_movies_day <- netflix_movies[order(netflix_movies$Date),]
 netflix_movies_day$weekday <- wday(netflix_movies_day$Date)
@@ -110,7 +105,6 @@ netflix_movies_day_calendar <-
   ggtitle("Netflix Movie Watch history") +
   labs(x = "Days", y = "Month") 
 netflix_movies_day_calendar
-
 
 total_genre <- movies_viewed %>%
                count(Genre1)
@@ -165,7 +159,6 @@ netflix_movies_plot <- netflix_movies_year %>%
   labs(x = "Year", y = "No of Movies") 
 netflix_movies_plot
 
-
 viewing_data_split$yr <- format(viewing_data_split$Date,"%Y")
 
 netflix_movies_series_year <- viewing_data_split %>%
@@ -184,12 +177,9 @@ netflix_movies_series_plot <- netflix_movies_series_year %>%
 netflix_movies_series_plot
 
 
-
-
 total_release_yr <- movies_viewed %>%
   ungroup %>%
   count(year)
-
 
 # PLOTTING MOVIES by RELEASE YEAR
 netflix_genre_plot <- subset(total_release_yr, year>1950) %>% 
