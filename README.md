@@ -1,12 +1,17 @@
 # netflixviewhistoryanalysis
 Analysis on personal Netflix viewing history
 
-# Data
+# Data 
 NetflixHistory.csv --- Netflix View History from Personal Netflix Account
 
-movies.csv -- MovieLens data of Hollywood movies
+movies.csv -- MovieLens data of Hollywood movies 
+http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html
 
 bmovies.csv -- IMDB data of Bollywood movies
+https://www.kaggle.com/mitesh58/bollywood-movie-dataset
+
+
+# Analysis 
 
 * PLOTTING MOVIES PER DAY
 * PLOTTING FAVORITE GENRES - OVERALL
