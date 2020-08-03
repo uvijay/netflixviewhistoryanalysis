@@ -3,6 +3,7 @@ Analysis on personal Netflix viewing history
 
 # Data 
 NetflixHistory.csv --- Netflix View History from Personal Netflix Account
+
 How to download your personal viewing activity from Netflix - https://help.netflix.com/en/node/101917
 
 movies.csv -- MovieLens data of Hollywood movies 
