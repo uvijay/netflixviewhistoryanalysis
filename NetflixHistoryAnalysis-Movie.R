@@ -9,8 +9,8 @@ library(stringr)
 library(data.table)
 library(fuzzyjoin)
 
-setwd("F:/Datasets")                        
-viewing_data <- read.csv("AritraTVNetflixViewingHistory.csv",stringsAsFactors=FALSE)
+                     
+viewing_data <- read.csv("NetflixViewingHistory.csv",stringsAsFactors=FALSE)
 str(viewing_data)
 summary(viewing_data)
 viewing_data$Date <- ymd(viewing_data$Date)
@@ -29,10 +29,10 @@ viewing_data_movies <- viewing_data_movies %>%
 viewing_data_movies$title <- str_to_upper(str_trim(viewing_data_movies$title,"both"))
 
 
-movies_data <- read.csv("IMDB-Dataset/movies.csv",stringsAsFactors=FALSE)
+movies_data <- read.csv("data/movies.csv",stringsAsFactors=FALSE)
 movies_data <- movies_data %>% 
   extract(title, c("title","year"), regex = '(^.+)\\((\\d+)')
-bmovies_data <- read.csv("IMDB-Dataset/bollywoodmovies.csv",stringsAsFactors=FALSE)
+bmovies_data <- read.csv("data/bollywoodmovies.csv",stringsAsFactors=FALSE)
 bmovies_data <- select(bmovies_data, 1,2,3,5)
 colnames(bmovies_data) <- c('movieId','title','year','genres')
 movies_data$type='Hollywood'
